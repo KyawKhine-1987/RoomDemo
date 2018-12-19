@@ -1,0 +1,50 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+
+        //VPI
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    //build
+    minSdkVersion = 16
+    compileSdkVersion = 27
+
+    //3rd party
+    picassoVersion = '2.5.2'
+    circleImageViewVersion = '2.2.0'
+    viewPagerIndicatorVersion = '2.4.1'
+    daggerVersion = '2.13'
+
+    //android
+    supportLibraryVersion = '27.0.0'
+    constraintLayoutVersion = '1.0.2'
+
+    // Lifecycle components
+    archLifecycleVersion = '1.0.3'
+    archLifecycleCompilerVersion = '1.0.0'
+    archLifecycleExtensionsVersion = '1.0.0'
+
+    // Room components
+    roomVersion = '1.0.0'
+
+}
